@@ -2,7 +2,7 @@ name: Deploy compiled Flutter demo
 on:
   push:
     branches: [main]
-    paths: [web.zip, .github/workflows/deploy.yml]
+    paths: [web.zip]
   workflow_dispatch:
 permissions:
   contents: read
@@ -21,9 +21,9 @@ jobs:
       - uses: actions/checkout@v4
       - name: Verify and unpack compiled website
         run: |
-          echo '9613ebec230dbf6895ad35418d6b661921723752bc72bebe780dffba1f5f1b20  web.zip' | sha256sum -c -
+          echo '339fccb6d9145ce9b85bab97697ba147df541c00e516ee496e809b215207c91c  web.zip' | sha256sum -c -
           unzip -q web.zip -d _site
-          echo '248774b902b64118d5b9c54ed7f56f3b5b3592da9f5dc7eb4e695d8763fad198  _site/main.dart.js' | sha256sum -c -
+          echo '6b0099932ab2a07cd8e470638b4b45fec1ba282b37b0dde6ec077d489a08af71  _site/main.dart.js' | sha256sum -c -
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
