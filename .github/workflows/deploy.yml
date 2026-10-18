@@ -21,9 +21,9 @@ jobs:
       - uses: actions/checkout@v4
       - name: Verify and unpack compiled website
         run: |
-          echo '339fccb6d9145ce9b85bab97697ba147df541c00e516ee496e809b215207c91c  web.zip' | sha256sum -c -
+          echo 'aa4a671d53bb7037b7383fc5314582f771d40cd5cb831e431ef201dd6e817279  web.zip' | sha256sum -c -
           unzip -q web.zip -d _site
-          echo '6b0099932ab2a07cd8e470638b4b45fec1ba282b37b0dde6ec077d489a08af71  _site/main.dart.js' | sha256sum -c -
+          echo 'c6f1c9efffcd1921f8fb02692c97f7a6b60a7f485e851f54141d0e27338bdb06  _site/main.dart.js' | sha256sum -c -
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
